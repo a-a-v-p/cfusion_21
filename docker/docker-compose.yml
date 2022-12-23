@@ -1,0 +1,14 @@
+version: "3"
+services:
+  coldfusion:
+    container_name: coldfusion_21
+    image: adobecoldfusion/coldfusion2021:latest
+    ports:
+      - 8500:8500
+    env_file:
+      - ./env/base.env
+    environment:
+      - acceptEULA=YES
+      - password=Admin1!
+    volumes:
+      - ./app:/app
